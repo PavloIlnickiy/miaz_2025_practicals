@@ -1,0 +1,75 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Jupyter Notebook checkpoints ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# --- Data files ---
+*.csv
+*.tsv
+*.dat
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+
+# --- Logs and outputs ---
+*.log
+*.out
+*.err
+
+# --- Model files ---
+*.ckpt
+*.ckpt.*
+*.tflite
+*.pb
+*.pth
+*.pt
+*.onnx
+*.weights
+
+# --- Temporary or large files ---
+.DS_Store
+*.tmp
+*.bak
+*.swp
+*.zip
+*.tar
+*.tar.gz
+
+# --- TensorBoard & training outputs ---
+logs/
+tensorboard/
+runs/
+saved_models/
+checkpoints/
+results/
+outputs/
+models/
+history/
+plots/
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- System / OS ---
+Thumbs.db
+desktop.ini

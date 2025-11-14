@@ -285,6 +285,11 @@ tbody tr:nth-child(odd) {
   background: rgba(0,0,0,0.08);
 }
 
+/* підсвічування рядка при наведенні (JS додає клас row-hover) */
+tbody tr.row-hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
 .table-compact th,
 .table-compact td {
   font-size: 11px;

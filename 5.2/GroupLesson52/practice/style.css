@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    
+}
+
+header {
+    color: #fff;
+    background-color: #4D4634;
+    text-align: center;
+    padding: 30px;
+    
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+#section2 {
+    color: #fff;
+    background-color: #035C6B;
+    text-align: center;
+    padding: 30px;
+}
+
+button {
+    background-color: white;
+    color: #2ecc71;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+/* Медіа-запити для адаптивного дизайну */
+@media screen and (max-width: 768px) {
+    /* Для маленьких екранів (планшети і мобільні) */
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    
+
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Для дуже маленьких екранів (мобільні телефони) */
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+

@@ -1,0 +1,159 @@
+/* Загальні стилі для тіла сторінки */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Стилізація заголовка */
+header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+/* Стилі для основного контенту */
+main {
+    padding: 40px 20px;
+}
+
+/* Блок з особливостями */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature h2 {
+    font-size: 1.5em;
+    color: #3498db;
+}
+
+.feature p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Заклик до дії (CTA) */
+.cta {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 40px 20px;
+}
+
+.cta h2 {
+    font-size: 2em;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: white;
+    color: #2ecc71;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #27ae60;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Медіа-запити для адаптивного дизайну */
+@media screen and (max-width: 768px) {
+    /* Для маленьких екранів (планшети і мобільні) */
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .cta h2 {
+        font-size: 1.8em;
+    }
+
+    .cta p {
+        font-size: 1.1em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Для дуже маленьких екранів (мобільні телефони) */
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .cta h2 {
+        font-size: 1.5em;
+    }
+
+    .cta p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

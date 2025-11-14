@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Дашборд бойового чисельного складу</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Дашборд бойового чисельного складу</h1>
+    <p class="subtitle">
+      Оперативний рівень: ОУВ &nbsp;|&nbsp;
+      Угруповання військ ОТУ «Південь» &nbsp;|&nbsp;
+      Оперативний день: 14.11.2025 06:00
+    </p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Огляд</a></li>
+      <li><a href="#">Бойовий склад</a></li>
+      <li><a href="#">Втрати та резерви</a></li>
+      <li><a href="#">Аналітика ШІ</a></li>
+      <li><a href="#">Налаштування</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- KPI блок -->
+    <section class="dashboard kpi-row">
+      <div class="card kpi">
+        <h2>Особовий склад</h2>
+        <p class="kpi-value">12 430 / 11 980</p>
+        <p class="kpi-desc">Штат / наявність</p>
+      </div>
+
+      <div class="card kpi">
+        <h2>Готовність</h2>
+        <p class="kpi-value">87%</p>
+        <p class="kpi-desc">Бойових підрозділів</p>
+      </div>
+
+      <div class="card kpi">
+        <h2>Техніка боєздатна</h2>
+        <p class="kpi-value">91,2%</p>
+        <p class="kpi-desc">Зміна: -0,6%</p>
+      </div>
+
+      <div class="card kpi">
+        <h2>Втрати за добу</h2>
+        <p class="kpi-value">27 / 3</p>
+        <p class="kpi-desc">Поранені / загиблі</p>
+      </div>
+    </section>
+
+    <!-- Основна сітка -->
+    <section class="dashboard main-grid">
+
+      <section class="card wide">
+        <h2>Бойовий склад по підрозділах</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Підрозділ</th>
+              <th>Штат</th>
+              <th>Наявність</th>
+              <th>Укомпл.</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>35 омбр</td><td>3400</td><td>3260</td><td>95,9%</td><td>Готова</td>
+            </tr>
+            <tr>
+              <td>59 омбр</td><td>3600</td><td>3290</td><td>91,4%</td><td>Обмежено готова</td>
+            </tr>
+            <tr>
+              <td>72 омбр</td><td>3500</td><td>3410</td><td>97,4%</td><td>Готова</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card wide">
+        <h2>Аналітика ШІ</h2>
+        <p>Точність NLP: <strong>0.89 F1</strong></p>
+        <p>Розпізнавання техніки: <strong>92%</strong></p>
+        <p>Інтегрованих джерел даних: <strong>7</strong></p>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Прототип дашборду ІАП ОУВ</p>
+  </footer>
+
+</body>
+</html>

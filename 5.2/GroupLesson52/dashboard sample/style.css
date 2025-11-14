@@ -1,0 +1,83 @@
+/* Загальний стиль сторінки */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa6d;
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер */
+.container {
+   padding: 10px;
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #186dc158;
+    margin-bottom: 30px;
+}
+
+/* Стиль таблиці */
+.table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #d119c2;
+    color: white;
+}
+
+.table td {
+    background-color: #f8f9fa;
+}
+
+.table tr:hover td {
+    background-color: #e5f19d;
+}
+
+/* Стиль для графіка */
+canvas {
+    width: 100% !important;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Кнопки */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Стиль для секцій */
+h2 {
+    margin-top: 40px;
+    color: #343a40;
+}
+
+/* Загальні відступи */
+.mt-5 {
+    padding-top: 50px;
+}
+
+.mt-3 {
+    margin-top: 20px;
+}

@@ -8,18 +8,19 @@
 
 <body>
   <header>
+    <div class="header-top">
+      <div class="header-badge">Оперативний рівень – ОУВ</div>
+      <div class="header-meta">
+        Угруповання військ ОТУ «Південь» · Опер. день: 14.11.2025 06:00 · Режим даних: узагальнені, без деталізації
+      </div>
+    </div>
     <h1>Дашборд бойового чисельного складу</h1>
-    <p class="subtitle">
-      Оперативний рівень: ОУВ &nbsp;|&nbsp;
-      Угруповання військ ОТУ «Південь» &nbsp;|&nbsp;
-      Оперативний день: 14.11.2025 06:00
-    </p>
   </header>
 
   <nav>
     <ul>
       <li><a href="#">Огляд</a></li>
-      <li><a href="#">Бойовий склад</a></li>
+      <li><a href="#" class="active">Бойовий склад</a></li>
       <li><a href="#">Втрати та резерви</a></li>
       <li><a href="#">Аналітика ШІ</a></li>
       <li><a href="#">Налаштування</a></li>
@@ -27,76 +28,225 @@
   </nav>
 
   <main>
-    <!-- KPI блок -->
-    <section class="dashboard kpi-row">
-      <div class="card kpi">
-        <h2>Особовий склад</h2>
-        <p class="kpi-value">12 430 / 11 980</p>
-        <p class="kpi-desc">Штат / наявність</p>
+    <!-- Верхній пояс з фільтрами, як у зразку -->
+    <section class="filters-row">
+      <div class="filter-pill">
+        Ешелон: <span>Оперативне командування</span>
       </div>
-
-      <div class="card kpi">
-        <h2>Готовність</h2>
-        <p class="kpi-value">87%</p>
-        <p class="kpi-desc">Бойових підрозділів</p>
+      <div class="filter-pill">
+        Період: <span>Поточний день</span>
       </div>
-
-      <div class="card kpi">
-        <h2>Техніка боєздатна</h2>
-        <p class="kpi-value">91,2%</p>
-        <p class="kpi-desc">Зміна: -0,6%</p>
+      <div class="filter-pill">
+        Станом на: <span>06:00</span>
       </div>
-
-      <div class="card kpi">
-        <h2>Втрати за добу</h2>
-        <p class="kpi-value">27 / 3</p>
-        <p class="kpi-desc">Поранені / загиблі</p>
+      <div class="filter-pill">
+        Автооновлення: <span>кожні 60 хв</span>
       </div>
     </section>
 
-    <!-- Основна сітка -->
-    <section class="dashboard main-grid">
+    <!-- Основна сітка: ліворуч зведені, праворуч структура БЧС -->
+    <section class="panel-grid">
 
-      <section class="card wide">
-        <h2>Бойовий склад по підрозділах</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Підрозділ</th>
-              <th>Штат</th>
-              <th>Наявність</th>
-              <th>Укомпл.</th>
-              <th>Статус</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>35 омбр</td><td>3400</td><td>3260</td><td>95,9%</td><td>Готова</td>
-            </tr>
-            <tr>
-              <td>59 омбр</td><td>3600</td><td>3290</td><td>91,4%</td><td>Обмежено готова</td>
-            </tr>
-            <tr>
-              <td>72 омбр</td><td>3500</td><td>3410</td><td>97,4%</td><td>Готова</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Ліва панель -->
+      <section class="panel panel-left">
+        <h2>Бойовий склад – зведені показники</h2>
+        <p class="panel-subtitle">
+          Оперативне командування – зведення по бригадах першого ешелону
+        </p>
+
+        <!-- KPI-ряд всередині панелі -->
+        <div class="kpi-row">
+          <div class="kpi-box">
+            <div class="kpi-title">Особовий склад</div>
+            <div class="kpi-main">12 430 / 11 980</div>
+            <div class="kpi-extra">Штат / наявність · +0,3% за добу</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-title">Бойові підрозділи</div>
+            <div class="kpi-main">87%</div>
+            <div class="kpi-extra">Готових підрозділів · 15/18 батальйонів</div>
+          </div>
+          <div class="kpi-box kpi-warn">
+            <div class="kpi-title">Техніка боєздатна</div>
+            <div class="kpi-main">91,2%</div>
+            <div class="kpi-extra">Втрати за добу: 4 од. · −0,6%</div>
+          </div>
+          <div class="kpi-box kpi-danger">
+            <div class="kpi-title">Санітарні втрати (за добу)</div>
+            <div class="kpi-main">27 / 3</div>
+            <div class="kpi-extra">Поранені / загиблі · −12 осіб особового складу</div>
+          </div>
+        </div>
+
+        <!-- Таблиця по підрозділах -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Підрозділ</th>
+                <th>Тип</th>
+                <th>Штат</th>
+                <th>Наявність</th>
+                <th>Укомпл.</th>
+                <th>Статус боєготовності</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>35 омбр</td>
+                <td>Бригада</td>
+                <td>3 400</td>
+                <td>3 260</td>
+                <td>95,9%</td>
+                <td class="status-good">Готова до ведення бойових дій</td>
+              </tr>
+              <tr>
+                <td>59 омбр</td>
+                <td>Бригада</td>
+                <td>3 600</td>
+                <td>3 290</td>
+                <td>91,4%</td>
+                <td class="status-warn">Обмежено боєздатна (некомплект)</td>
+              </tr>
+              <tr>
+                <td>72 омбр</td>
+                <td>Бригада</td>
+                <td>3 500</td>
+                <td>3 410</td>
+                <td>97,4%</td>
+                <td class="status-good">Готова (резерв командування)</td>
+              </tr>
+              <tr>
+                <td>121 трбр</td>
+                <td>Бригада</td>
+                <td>1 930</td>
+                <td>1 820</td>
+                <td>94,3%</td>
+                <td class="status-warn">Обмежено по техніці</td>
+              </tr>
+              <tr>
+                <td>Окремий батальйон БпЛА</td>
+                <td>Батальйон</td>
+                <td>620</td>
+                <td>590</td>
+                <td>95,2%</td>
+                <td class="status-crit">Часткові втрати ключового персоналу</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="panel-note">
+          *Дані є умовними і наведені для демонстрації прототипу дашборду в межах магістерського дослідження.
+        </p>
       </section>
 
-      <section class="card wide">
-        <h2>Аналітика ШІ</h2>
-        <p>Точність NLP: <strong>0.89 F1</strong></p>
-        <p>Розпізнавання техніки: <strong>92%</strong></p>
-        <p>Інтегрованих джерел даних: <strong>7</strong></p>
+      <!-- Права панель: структура БЧС по бригадах -->
+      <section class="panel panel-right">
+        <h2>Структура БЧС – по бригадах</h2>
+        <p class="panel-subtitle">
+          Співвідношення готових, резервних та втрат особового складу
+        </p>
+
+        <div class="bcs-list">
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">35 омбр</span>
+                <span class="bcs-strength">3 260 / 3 400</span>
+              </div>
+              <div class="bcs-meta">
+                Готові: 2 050 · Резерв: 260 · Втрати: 290
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:60%;"></div>
+              <div class="seg reserve" style="width:17%;"></div>
+              <div class="seg loss"    style="width:23%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">59 омбр</span>
+                <span class="bcs-strength">3 290 / 3 600</span>
+              </div>
+              <div class="bcs-meta">
+                Готові: 2 930 · Резерв: 180 · Втрати: 490
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:55%;"></div>
+              <div class="seg reserve" style="width:12%;"></div>
+              <div class="seg loss"    style="width:33%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">72 омбр</span>
+                <span class="bcs-strength">3 410 / 3 500</span>
+              </div>
+              <div class="bcs-meta">
+                Готові: 3 020 · Резерв: 300 · Втрати: 180
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:70%;"></div>
+              <div class="seg reserve" style="width:15%;"></div>
+              <div class="seg loss"    style="width:15%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">121 трбр</span>
+                <span class="bcs-strength">1 820 / 1 930</span>
+              </div>
+              <div class="bcs-meta">
+                Готові: 1 520 · Резерв: 80 · Втрати: 230
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:68%;"></div>
+              <div class="seg reserve" style="width:10%;"></div>
+              <div class="seg loss"    style="width:22%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Окремий батальйон БпЛА</span>
+                <span class="bcs-strength">590 / 620</span>
+              </div>
+              <div class="bcs-meta">
+                Готові: 500 · Резерв: 40 · Втрати: 80
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:70%;"></div>
+              <div class="seg reserve" style="width:8%;"></div>
+              <div class="seg loss"    style="width:22%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="panel-note">
+          *Шкали відображають узагальнене співвідношення готових, резервних сил і втрат. У реальній системі значення можуть оновлюватися за запитами до БД.
+        </p>
       </section>
 
     </section>
-
   </main>
 
   <footer>
-    <p>&copy; 2025 Прототип дашборду ІАП ОУВ</p>
+    <p>&copy; 2025 Прототип дашборду ІАП ОУВ · Магістерське дослідження</p>
   </footer>
-
 </body>
 </html>

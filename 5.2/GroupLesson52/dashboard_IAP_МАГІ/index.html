@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Інформаційно-аналітичний дашборд ІАП ПУ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <div class="header-badge">Інформаційно-аналітичний підрозділ пункту управління</div>
+      <div class="header-meta">
+        Прототип ІСППР · Оперативно-тактичне угруповання військ · Опер. день: 14.11.2025 06:00
+      </div>
+    </div>
+    <h1>Дашборд підтримки рішень ІАП з використанням технологій ШІ</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Огляд ІАП</a></li>
+      <li><a href="#">Потоки даних</a></li>
+      <li><a href="#">Моделі ШІ</a></li>
+      <li><a href="#">Аналітичні продукти</a></li>
+      <li><a href="#">Налаштування</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Верхній пояс – інтерактивні кнопки-фільтри -->
+    <section class="filters-row">
+      <button class="filter-pill is-active">
+        <span class="filter-label">Режим роботи</span>
+        <span class="filter-value">Оперативний (наближений до реального часу)</span>
+      </button>
+      <button class="filter-pill">
+        <span class="filter-label">Джерела даних</span>
+        <span class="filter-value">БпЛА, РЕР, супутники, РЛС, донесення, OSINT</span>
+      </button>
+      <button class="filter-pill">
+        <span class="filter-label">Рівень деталізації</span>
+        <span class="filter-value">Узагальнений (без персональних даних)</span>
+      </button>
+      <button class="filter-pill">
+        <span class="filter-label">Статус системи ШІ</span>
+        <span class="filter-value">Активний · автооновлення кожні 60 хв</span>
+      </button>
+    </section>
+
+    <!-- Пояснення до фільтрів -->
+    <section class="filters-info-grid">
+      <div class="filter-info-card">
+        <h3>Режим роботи ІАП</h3>
+        <p>
+          ІАП функціонує в оперативному режимі: дані надходять та обробляються в циклі 15–60 хвилин,
+          що дозволяє своєчасно готувати пропозиції для командира.
+        </p>
+      </div>
+      <div class="filter-info-card">
+        <h3>Інтегровані джерела даних</h3>
+        <p>
+          До системи підключено щонайменше 7 типів джерел: БпЛА, РЕР, супутникова розвідка, РЛС,
+          бойові донесення, OSINT та сенсорні мережі. Це основа для багатоджерельної (multi-INT) аналітики.
+        </p>
+      </div>
+      <div class="filter-info-card">
+        <h3>Рівень деталізації</h3>
+        <p>
+          На цьому екрані відображається узагальнена обстановка без персональних даних. Детальна інформація
+          може бути доступна на закритих робочих місцях ІАП.
+        </p>
+      </div>
+      <div class="filter-info-card">
+        <h3>Статус системи ШІ</h3>
+        <p>
+          Аналітичні модулі ШІ працюють у фоновому режимі, забезпечуючи фільтрацію, класифікацію та
+          пріоритезацію подій. Планове автооновлення – кожні 60 хвилин.
+        </p>
+      </div>
+    </section>
+
+    <!-- Основна сітка: ліворуч – навантаження ІАП, праворуч – показники ШІ -->
+    <section class="panel-grid">
+
+      <!-- Ліва панель -->
+      <section class="panel panel-left">
+        <h2>Потоки даних та навантаження на ІАП</h2>
+        <p class="panel-subtitle">
+          Зведені показники роботи інформаційно-аналітичного підрозділу пункту управління за поточний день
+        </p>
+
+        <!-- KPI -->
+        <div class="kpi-row">
+          <div class="kpi-box">
+            <div class="kpi-title">Вхідні повідомлення (за 24 год)</div>
+            <div class="kpi-main">1 280</div>
+            <div class="kpi-extra">Усі джерела (БпЛА, РЕР, донесення, OSINT)</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-title">Автоматично оброблено ШІ</div>
+            <div class="kpi-main">64%</div>
+            <div class="kpi-extra">Класифікація, фільтрація, пріоритезація подій</div>
+          </div>
+          <div class="kpi-box kpi-warn">
+            <div class="kpi-title">Середній час аналітичного циклу</div>
+            <div class="kpi-main">28 хв</div>
+            <div class="kpi-extra">Було: ~70 хв без застосування ШІ</div>
+          </div>
+          <div class="kpi-box kpi-danger">
+            <div class="kpi-title">Черга завдань високого пріоритету</div>
+            <div class="kpi-main">12</div>
+            <div class="kpi-extra">Події, що потребують негайної уваги командира</div>
+          </div>
+        </div>
+
+        <!-- Таблиця подій -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID події</th>
+                <th>Джерело</th>
+                <th>Тип події (NLP)</th>
+                <th>Пріоритет (ШІ)</th>
+                <th>Відповідальний аналітик</th>
+                <th>Статус опрацювання</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EV-0821</td>
+                <td>БпЛА</td>
+                <td>Скупчення техніки</td>
+                <td class="status-crit">DANGER</td>
+                <td>ст. офіцер ІАЗ-1</td>
+                <td class="status-crit">Доповідь готується</td>
+              </tr>
+              <tr>
+                <td>EV-0834</td>
+                <td>РЕР</td>
+                <td>Активність РЕЗ противника</td>
+                <td class="status-warn">HIGH</td>
+                <td>офіцер ІАЗ-2</td>
+                <td class="status-warn">В роботі</td>
+              </tr>
+              <tr>
+                <td>EV-0840</td>
+                <td>Бойове донесення</td>
+                <td>Артилерійський обстріл</td>
+                <td class="status-good">MEDIUM</td>
+                <td>черговий аналітик</td>
+                <td class="status-good">Проаналізовано</td>
+              </tr>
+              <tr>
+                <td>EV-0847</td>
+                <td>OSINT</td>
+                <td>Перекидання резервів</td>
+                <td class="status-warn">HIGH</td>
+                <td>офіцер ІАЗ-3</td>
+                <td class="status-warn">Потребує підтвердження</td>
+              </tr>
+              <tr>
+                <td>EV-0855</td>
+                <td>БпЛА</td>
+                <td>Розгортання артпозицій</td>
+                <td class="status-crit">DANGER</td>
+                <td>ст. офіцер ІАЗ-1</td>
+                <td class="status-crit">Доповідь командиру</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="panel-note">
+          *Цей блок демонструє автоматизовану постановку задач ІАП: події проходять
+          фільтрацію та пріоритезацію з використанням моделей ШІ, після чого передаються
+          на доопрацювання відповідальним аналітикам.
+        </p>
+      </section>
+
+      <!-- Права панель -->
+      <section class="panel panel-right">
+        <h2>Показники ефективності моделей ШІ та ситуаційна картина</h2>
+        <p class="panel-subtitle">
+          Якість роботи моделей та рівень інформаційної визначеності по основних оперативних напрямках
+        </p>
+
+        <!-- Показники моделей ШІ -->
+        <div class="bcs-list">
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Класифікація текстових подій (NLP)</span>
+                <span class="bcs-strength">F1 = 0,89</span>
+              </div>
+              <div class="bcs-meta">
+                Типи: обстріл, наступ, перегрупування, розвідка, перекидання резервів
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:75%;"></div>
+              <div class="seg reserve" style="width:15%;"></div>
+              <div class="seg loss"    style="width:10%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Розпізнавання техніки (Computer Vision)</span>
+                <span class="bcs-strength">Точність 92%</span>
+              </div>
+              <div class="bcs-meta">
+                Виявлення бронетехніки, артилерії, РСЗВ за зображеннями БпЛА
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:80%;"></div>
+              <div class="seg reserve" style="width:10%;"></div>
+              <div class="seg loss"    style="width:10%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Інтеграція джерел (Data Fusion)</span>
+                <span class="bcs-strength">7 джерел</span>
+              </div>
+              <div class="bcs-meta">
+                БпЛА, РЕР, супутники, РЛС, бойові донесення, OSINT, сенсори (IoT)
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:65%;"></div>
+              <div class="seg reserve" style="width:20%;"></div>
+              <div class="seg loss"    style="width:15%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Інформаційна визначеність -->
+        <h2>Інформаційна визначеність по напрямках</h2>
+        <p class="panel-subtitle">
+          Частка підтверджених даних, на основі яких формуються рекомендації для командира
+        </p>
+
+        <div class="bcs-list">
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Напрямок «Південь»</span>
+                <span class="bcs-strength">~ 82%</span>
+              </div>
+              <div class="bcs-meta">
+                Висока активність БпЛА, достатня кількість підтверджених подій
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:70%;"></div>
+              <div class="seg reserve" style="width:20%;"></div>
+              <div class="seg loss"    style="width:10%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Напрямок «Центр»</span>
+                <span class="bcs-strength">~ 68%</span>
+              </div>
+              <div class="bcs-meta">
+                Стабільна обстановка, частина даних потребує уточнення
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:55%;"></div>
+              <div class="seg reserve" style="width:30%;"></div>
+              <div class="seg loss"    style="width:15%;"></div>
+            </div>
+          </div>
+
+          <div class="bcs-row">
+            <div class="bcs-label">
+              <div class="bcs-main">
+                <span class="bcs-name">Напрямок «Північ»</span>
+                <span class="bcs-strength">~ 61%</span>
+              </div>
+              <div class="bcs-meta">
+                Виявлено нарощення сил противника, потреба в додатковій розвідці
+              </div>
+            </div>
+            <div class="bcs-bar">
+              <div class="seg ready"   style="width:50%;"></div>
+              <div class="seg reserve" style="width:25%;"></div>
+              <div class="seg loss"    style="width:25%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="panel-note">
+          *Права панель демонструє, як якісні показники моделей ШІ та інформаційна
+          визначеність інтегруються в єдиний інтерфейс підтримки прийняття рішень командира.
+        </p>
+      </section>
+
+    </section>
+
+    <!-- Додаткова панель: підрозділи та техніка -->
+    <section class="panel panel-full">
+      <h2>Структура озброєння та техніки по підрозділах (зразок)</h2>
+      <p class="panel-subtitle">
+        Узагальнені дані щодо наявності та боєздатності основних видів озброєння і техніки по підрозділах першого ешелону
+      </p>
+
+      <div class="table-wrapper">
+        <table class="table-compact">
+          <thead>
+            <tr>
+              <th>Підрозділ</th>
+              <th>Танки</th>
+              <th>БМП / БТР</th>
+              <th>Артсистеми</th>
+              <th>РСЗВ</th>
+              <th>БпЛА</th>
+              <th>Боєздатність техніки</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>35 омбр</td>
+              <td>28 / 24</td>
+              <td>96 / 88</td>
+              <td>24 / 21</td>
+              <td>12 / 11</td>
+              <td>18 / 16</td>
+              <td class="tech-cell">
+                <div class="tech-bar">
+                  <div class="tech-fill good" style="width:92%;"></div>
+                </div>
+                <span class="tech-label status-good">~ 92%</span>
+              </td>
+            </tr>
+            <tr>
+              <td>59 омбр</td>
+              <td>30 / 23</td>
+              <td>102 / 86</td>
+              <td>22 / 18</td>
+              <td>10 / 8</td>
+              <td>16 / 13</td>
+              <td class="tech-cell">
+                <div class="tech-bar">
+                  <div class="tech-fill warn" style="width:85%;"></div>
+                </div>
+                <span class="tech-label status-warn">~ 85%</span>
+              </td>
+            </tr>
+            <tr>
+              <td>72 омбр</td>
+              <td>26 / 25</td>
+              <td>90 / 86</td>
+              <td>20 / 19</td>
+              <td>8 / 8</td>
+              <td>20 / 19</td>
+              <td class="tech-cell">
+                <div class="tech-bar">
+                  <div class="tech-fill good" style="width:95%;"></div>
+                </div>
+                <span class="tech-label status-good">~ 95%</span>
+              </td>
+            </tr>
+            <tr>
+              <td>121 трбр</td>
+              <td>12 / 9</td>
+              <td>54 / 47</td>
+              <td>14 / 11</td>
+              <td>6 / 5</td>
+              <td>10 / 7</td>
+              <td class="tech-cell">
+                <div class="tech-bar">
+                  <div class="tech-fill warn" style="width:82%;"></div>
+                </div>
+                <span class="tech-label status-warn">~ 82%</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Окремий батальйон БпЛА</td>
+              <td>–</td>
+              <td>–</td>
+              <td>–</td>
+              <td>–</td>
+              <td>45 / 38</td>
+              <td class="tech-cell">
+                <div class="tech-bar">
+                  <div class="tech-fill crit" style="width:84%;"></div>
+                </div>
+                <span class="tech-label status-crit">~ 84% (втрата частини БпЛА)</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="panel-note">
+        *Цей блок може використовуватися як окремий дашборд технічного стану озброєння. У реальній
+        системі дані надходитимуть із підсистем обліку ОВТ та будуть синхронізовані з основною БД ІСППР.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Прототип дашборду ІАП ПУ · Магістерське дослідження (ШІ для автоматизації процесів ІАЗ)</p>
+  </footer>
+</body>
+</html>

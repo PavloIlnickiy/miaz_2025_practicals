@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operatyvnyi Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Оперативний Дашборд</h1>
+
+  <section id="filters">
+    <label>From: <input type="date" id="fromDate"></label>
+    <label>To: <input type="date" id="toDate"></label>
+
+    <label>Sector:
+      <select id="sector"><option value="">All</option></select>
+    </label>
+
+    <label>Direction:
+      <select id="direction"><option value="">All</option></select>
+    </label>
+
+    <label>Event type:
+      <select id="eventType"><option value="">All</option></select>
+    </label>
+
+    <label>Min intensity:
+      <input type="number" id="minIntensity" min="1" max="50" />
+    </label>
+
+    <button id="applyBtn">Apply</button>
+  </section>
+
+  <section id="kpi" class="grid4">
+    <div class="card"><div class="label">Total incidents</div><div id="kpiTotal" class="value">-</div></div>
+    <div class="card"><div class="label">Total intensity</div><div id="kpiSum" class="value">-</div></div>
+    <div class="card"><div class="label">Avg intensity</div><div id="kpiAvg" class="value">-</div></div>
+    <div class="card"><div class="label">Top direction</div><div id="kpiTop" class="value">-</div></div>
+  </section>
+
+  <section id="trendSection">
+    <h2>Trend</h2>
+    <canvas id="trendChart"></canvas>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

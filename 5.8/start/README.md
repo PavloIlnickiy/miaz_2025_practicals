@@ -1,23 +1,27 @@
-# Орієнтир-А
-Minimal Postgres + FastAPI (sync) + vanilla JS dashboard.
+# Operatyvnyi Dashboard (PostgreSQL -> FastAPI -> SimpleJS)
 
-## Quick start (Windows)
-- venv + deps: `с && .\.venv\Scripts\activate && pip install -r requirements.txt`
-- create DB: `psql -c "CREATE DATABASE orientyr_a;"`
-- schema: `.\scripts\init_db.ps1`
-- seed: `.\scripts\seed_db.ps1`
-- API: `uvicorn api.main:app --reload`
-- web: `cd web && python -m http.server 8000`
+## Run (Windows, PowerShell)
 
-## Quick start (Linux/macOS)
-- venv + deps: `python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
-- create DB: `psql -c "CREATE DATABASE orientyr_a;"`
-- schema: `bash scripts/init_db.sh`
-- seed: `bash scripts/seed_db.sh`
-- API: `uvicorn api.main:app --reload`
-- web: `cd web && python -m http.server 8000`
+1) Create venv:
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 
-## Demo script
-- Executive view: open `web/index.html?view=executive`, apply filters, read KPI + trend insight.
-- Analyst view: switch to `?view=analyst`, explore heatmap and incidents table/modal.
-- Demo view: switch to `?view=demo`, show KPI + charts + heatmap (incidents hidden).
+2) Create DB:
+psql -d postgres -c "CREATE DATABASE operatyvnyi_dashbord;"
+
+3) Init schema:
+.\scripts\init_db.ps1
+
+4) Seed data:
+.\scripts\seed_db.ps1
+
+5) Run API:
+uvicorn api.main:app --reload
+
+6) Run Web:
+cd web
+python -m http.server 5500
+
+Open:
+http://localhost:5500/?view=analyst
